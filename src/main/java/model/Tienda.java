@@ -1,32 +1,27 @@
 package model;
 
-import java.util.ArrayList;
+
 
 public class Tienda {
 
-    private ArrayList<Articulo> listaProductos;
-    private ArrayList<Cliente> listaClientes;
+   private String nombre;
 
-    public Tienda(ArrayList<Articulo> listaProductos, ArrayList<Cliente> listaClientes) {
-        this.listaProductos = listaProductos;
-        this.listaClientes = listaClientes;
+    public Tienda(String nombre) {
+        this.nombre = nombre;
     }
 
-    public ArrayList<Articulo> getListaProductos() {
-        return listaProductos;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setListaProductos(ArrayList<Articulo> listaProductos) {
-        this.listaProductos = listaProductos;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public ArrayList<Cliente> getListaClientes() {
-        return listaClientes;
+    @Override
+    public String toString() {
+        return "Tienda{" +
+                "nombre='" + nombre + '\'' +
+                '}';
     }
-
-    public void setListaClientes(ArrayList<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
-    }
-
-
 }

@@ -4,16 +4,16 @@ public class Articulo {
 
     private  String nombre;
     private String peso;
-    private Double precio;
+    private String precio;
     private String tipo;
-    private  int id;
+    private  String id;
 
-    public Articulo(String nombre, String peso, Double precio, String tipo, int id) {
+    public Articulo(String nombre, String peso, String precio, String tipo, String id) {
         this.nombre = nombre;
         this.peso = peso;
         this.precio = precio;
         this.tipo = tipo;
-        this.id=id;
+        this.id = id;
     }
 
     public String getNombre() {
@@ -32,11 +32,11 @@ public class Articulo {
         this.peso = peso;
     }
 
-    public Double getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(Double precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 
@@ -48,11 +48,11 @@ public class Articulo {
         this.tipo = tipo;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -61,9 +61,9 @@ public class Articulo {
         return "Articulo{" +
                 "nombre='" + nombre + '\'' +
                 ", peso='" + peso + '\'' +
-                ", precio=" + precio +
+                ", precio='" + precio + '\'' +
                 ", tipo='" + tipo + '\'' +
-                ", id=" + id +
+                ", id='" + id + '\'' +
                 '}';
     }
 }

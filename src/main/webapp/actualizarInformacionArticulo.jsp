@@ -16,7 +16,7 @@
 <h1>Modificar Artículo</h1>
 <!-- Título principal de la página -->
 
-<form action="ModificarArticuloServlet" method="post">
+<form action="ArticuloServlet" method="post">
     <label for="id">ID del Artículo:</label>
     <input type="text" name="id" id="id" required><br><br>
     <!-- Campo de entrada para el ID del artículo -->
