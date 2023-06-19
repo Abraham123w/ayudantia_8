@@ -1,151 +1,127 @@
-/* Estilos para el encabezado h1 */
-h1 {
-    color: #fff;                   /* Color de texto: blanco */
-    text-align: center;            /* Alineación del texto: centrado */
-    font-size: 36px;               /* Tamaño de fuente: 36px */
-    margin-top: 40px;              /* Margen superior de 40px */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+/* Estilos generales */
+body {
+    font-family: "Amazon Ember", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
 }
 
-/* Estilos para el contenedor de botones */
-.botones {
-    display: flex;                 /* Uso de flexbox para organizar los botones */
-    justify-content: center;       /* Centrar los botones horizontalmente */
-    margin-top: 20px;              /* Margen superior de 20px */
+h1 {
+    color: #232f3e;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
 }
 
 /* Estilos para los botones */
-button {
-    padding: 10px 20px;            /* Espaciado interno de 10px vertical y 20px horizontal */
-    margin: 0 10px;                /* Margen izquierdo y derecho de 10px */
-    font-size: 16px;               /* Tamaño de fuente: 16px */
-    background-color: #005288;     /* Color de fondo: azul oscuro (#005288) */
-    color: #fff;                   /* Color de texto: blanco */
-    border: none;                  /* Sin borde */
-    cursor: pointer;               /* Cambia el cursor al pasar por encima del botón */
-    border-radius: 4px;            /* Borde redondeado */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
-    transition: background-color 0.3s ease;  /* Transición suave para el cambio de color de fondo */
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-/* Estilos para los botones al pasar el cursor */
-button:hover {
-    background-color: #00334e;     /* Color de fondo al pasar el cursor: azul más oscuro (#00334e) */
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #000;        /* Color de fondo: negro (#000) */
-    margin: 0;
-    padding: 20px;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
+.boton {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    margin: 0 10px;
     border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
+    font-size: 16px;
     font-weight: bold;
-    color: #fff;                   /* Color de texto: blanco */
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
-
-input[type="submit"] {
-    background-color: #005288; /* Color de fondo: azul oscuro (#005288) */
-    color: #fff; /* Color de texto: blanco */
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
     border: none;
-    padding: 10px 20px;
-
+    cursor: pointer;
 }
 
-
-
-    /* Estilos para el encabezado h1 */
-h1 {
-    color: #fff;                   /* Color de texto: blanco */
-    text-align: center;            /* Alineación del texto: centrado */
-    font-size: 36px;               /* Tamaño de fuente: 36px */
-    margin-top: 40px;              /* Margen superior de 40px */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+.boton:hover {
+    background-color: #e67e00;
 }
 
-/* Estilos para el contenedor de botones */
-.botones {
-    display: flex;                 /* Uso de flexbox para organizar los botones */
-    justify-content: center;       /* Centrar los botones horizontalmente */
-    margin-top: 20px;              /* Margen superior de 20px */
-}
-
-/* Estilos para los botones */
-button {
-    padding: 10px 20px;            /* Espaciado interno de 10px vertical y 20px horizontal */
-    margin: 0 10px;                /* Margen izquierdo y derecho de 10px */
-    font-size: 16px;               /* Tamaño de fuente: 16px */
-    background-color: #005288;     /* Color de fondo: azul oscuro (#005288) */
-    color: #fff;                   /* Color de texto: blanco */
-    border: none;                  /* Sin borde */
-    cursor: pointer;               /* Cambia el cursor al pasar por encima del botón */
-    border-radius: 4px;            /* Borde redondeado */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
-    transition: background-color 0.3s ease;  /* Transición suave para el cambio de color de fondo */
-}
-
-/* Estilos para los botones al pasar el cursor */
-button:hover {
-    background-color: #00334e;     /* Color de fondo al pasar el cursor: azul más oscuro (#00334e) */
-}
-
-body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-image: url('https://www.xtrafondos.com/wallpapers/lineas-estilo-dark-mode-minimalista-6404.jpg');  /* Ruta de la imagen de fondo */
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 20px;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
+/* Estilos para el formulario de agregar libro */
+.form-group {
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 10px;
     font-weight: bold;
-    color: #fff;                   /* Color de texto: blanco */
+    margin-bottom: 5px;
 }
 
-input[type="text"] {
+input[type="text"],
+select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #a6a6a6;
     border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
     box-sizing: border-box;
-    margin-bottom: 20px;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #ff9900;
+    outline: none;
 }
 
 input[type="submit"] {
-    background-color: #005288;
+    background-color: #ff9900;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #e67300;
+}
+
+/* Estilos para el contenedor del formulario */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para el título */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

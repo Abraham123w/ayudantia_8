@@ -6,14 +6,14 @@ public class Articulo {
     private String peso;
     private String precio;
     private String tipo;
-    private  String id;
 
-    public Articulo(String nombre, String peso, String precio, String tipo, String id) {
+
+    public Articulo(String nombre,String tipo, String peso, String precio ) {
         this.nombre = nombre;
         this.peso = peso;
         this.precio = precio;
         this.tipo = tipo;
-        this.id = id;
+
     }
 
     public String getNombre() {
@@ -48,22 +48,13 @@ public class Articulo {
         this.tipo = tipo;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
         return "Articulo{" +
                 "nombre='" + nombre + '\'' +
-                ", peso='" + peso + '\'' +
-                ", precio='" + precio + '\'' +
-                ", tipo='" + tipo + '\'' +
-                ", id='" + id + '\'' +
+                ", peso='" + tipo + '\'' +
+                ", precio='" + peso + '\'' +
+                ", tipo='" + precio + '\'' +
                 '}';
     }
 }

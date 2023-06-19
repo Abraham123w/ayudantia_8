@@ -2,30 +2,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Agregar Artículo</title>
+    <meta charset="UTF-8">
+    <title>Obtener Parámetros</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-<h1>Agregar Artículo</h1>
-
-<form action="AgregarArticuloServlet" method="post">
-    <label for="id">ID del Artículo:</label>
-    <input type="text" name="id" id="id" required><br><br>
-
+<h1>Obtener Parámetros</h1>
+<form action="AgregarArticuloServlet" method="POST">
     <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" id="nombre"><br><br>
+    <input type="text" name="nombre" id="nombre"><br>
+
+    <label for="tipo">Tipo de artículo:</label>
+    <input type="text" name="tipo" id="tipo"><br>
 
     <label for="peso">Peso:</label>
-    <input type="text" name="peso" id="peso"><br><br>
+    <input type="text" name="peso" id="peso"><br>
 
     <label for="precio">Precio:</label>
-    <input type="text" name="precio" id="precio"><br><br>
+    <input type="text" name="precio" id="precio"><br>
 
-    <label for="tipo">Tipo:</label>
-    <input type="text" name="tipo" id="tipo"><br><br>
-
-    <input type="submit" value="Agregar">
+    <input type="submit" value="Enviar">
 </form>
-
 </body>
 </html>

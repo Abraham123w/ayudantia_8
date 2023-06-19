@@ -9,7 +9,7 @@
 <body>
 <h1>Agregar Cliente</h1>
 
-<form action="ClienteServlet" method="post">
+<form action="AgregarClienteServlet" method="post">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required><br><br>
 
