@@ -1,1 +1,2 @@
-Abraham,I,A,hombre
+Abraham,A,hombre,I
+Aerie,2,1000,libro

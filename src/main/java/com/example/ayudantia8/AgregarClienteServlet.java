@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 import static Validadores.ValidarCorreo.validarCorreo;
 import static Validadores.ValidarRut.validarRut;
 
+
 @WebServlet(name = "AgregarClienteServlet", value = "/AgregarClienteServlet")
 public class AgregarClienteServlet extends HttpServlet {
     private ClientesDAO clienteDAO; // Suponiendo que tienes una clase ClienteDAO implementada
@@ -28,12 +29,10 @@ public class AgregarClienteServlet extends HttpServlet {
         clienteDAO = new ClientesDAO();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      //  String nombre, String rut, String correo
         // Obtener los parámetros enviados desde el formulario
         String nombre = request.getParameter("nombre");
         String rut = request.getParameter("rut");
         String correo = request.getParameter("correo");
-
 
         RequestDispatcher respuesta1 = request.getRequestDispatcher("/clienteAgregado.jsp");
         RequestDispatcher respuesta2 = request.getRequestDispatcher("/errorAgregarCliente.jsp");
@@ -41,19 +40,24 @@ public class AgregarClienteServlet extends HttpServlet {
         Cliente cliente = new Cliente(nombre, rut, correo);
 
         boolean correoValido = validarCorreo(correo);
-        boolean rutValido = validarRut(rut);
-        boolean clienteDuplicado = clienteDAO.existeCliente(nombre,rut);
-        //quedamos aqui
-        if (correoValido && rutValido&& !clienteDuplicado) {
-           ClientesDAO.agregarCliente(cliente);
+       boolean rutValido = validarRut(rut);
+        boolean clienteDuplicado = clienteDAO.existeCliente(nombre, rut);
+
+      //  boolean correoValido = true;
+       //boolean rutValido = true;
+       // boolean clienteDuplicado = true;
+
+
+        if (correoValido && rutValido && clienteDuplicado) {
+            ClientesDAO.agregarCliente(cliente);
+            request.setAttribute("cliente", cliente);
             respuesta1.forward(request, response);
         } else {
-            // Uno o ambos valores son inválidos
-            // Puedes mostrar un mensaje de error o realizar otra acción
+            response.setContentType("text/html");
+            PrintWriter out = response.getWriter();
+            out.println("Error al agregar el cliente");
             respuesta2.forward(request, response);
         }
-
-
     }
 
 

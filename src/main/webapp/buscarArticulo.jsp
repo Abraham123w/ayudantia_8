@@ -9,9 +9,9 @@
 <body>
 <h1>Buscar Artículo por ID</h1>
 
-<form method="GET" action="buscarArticuloController">
-    <label for="id">ID del Artículo:</label>
-    <input type="text" name="id" id="id">
+<form method="GET" action="BuscarArticuloServlet">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre">
     <input type="submit" value="Buscar">
 </form>
 </body>

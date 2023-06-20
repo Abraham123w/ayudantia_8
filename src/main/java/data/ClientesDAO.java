@@ -16,14 +16,14 @@ public class ClientesDAO {
 
                 if (nombreCliente.equalsIgnoreCase(nombre) && rutCliente.equalsIgnoreCase(rut)) {
                     // El cliente ya existe en el archivo
-                    return true;
+                    return false;
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return false; // El cliente no está duplicado en el archivo
+        return true; // El cliente no está duplicado en el archivo
     }
     public static boolean agregarCliente(Cliente cliente) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(rutaArchivo, true))) {
@@ -39,5 +39,8 @@ public class ClientesDAO {
             return false; // Indicar que ocurrió un error al agregar el artículo
         }
     }
-
+    public static void main(String[] args) {
+        Cliente cliente = new Cliente("abraham", "188839886", "pepito@gmail.com");
+        agregarCliente(cliente);
+    }
 }

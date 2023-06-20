@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-<h1>Gestion de Libros</h1>
+<h1>Tienda</h1>
 
 <div class="botones">
     <a href="agregarArticulo.jsp" class="boton">Agregar Articulo</a>
