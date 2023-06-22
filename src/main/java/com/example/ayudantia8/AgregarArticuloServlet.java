@@ -27,7 +27,7 @@ public class AgregarArticuloServlet extends HttpServlet {
         RequestDispatcher respuesta1 = request.getRequestDispatcher("/articuloAgregado.jsp");
         RequestDispatcher respuesta2 = request.getRequestDispatcher("/errorAgregarArticulo.jsp");
         RequestDispatcher respuesta3 = request.getRequestDispatcher("/errorAgregarArticuloNumerico.jsp");
-
+   ///AQUI ESTAMOS PROBANDO EL MERGE JEJEJEJEJ
 
 
         //VALIDAR PRECIO Y PESO QUE SEAN VALORES POSITOVOS Y NUMERICOS
@@ -47,20 +47,9 @@ public class AgregarArticuloServlet extends HttpServlet {
 
             // Redirigir a la página de error correspondiente y finalizar el método
             respuesta3.forward(request, response);
+
             return;
         }
-
-// Validar si el peso y el precio son mayores que cero
-        if (pesoValor <= 0 || precioValor <= 0) {
-            // Si el peso o el precio son menores o iguales a cero, mostrar un mensaje de error en la respuesta
-            PrintWriter out = response.getWriter();
-            out.println("Error al agregar el artículo: peso y precio deben ser mayores que cero.");
-
-            // Redirigir a la página de error correspondiente y finalizar el método
-            respuesta3.forward(request, response);
-            return;
-        }
-
 
 
 

@@ -59,10 +59,4 @@ public class AgregarClienteServlet extends HttpServlet {
             respuesta2.forward(request, response);
         }
     }
-
-
-
-
-
-
 }

@@ -64,6 +64,11 @@ public class ArticuloDAO {
                 articuloOriginal.setPrecio(nuevoPrecio);
                 articuloOriginal.setTipo(nuevoTipo);
                 articuloOriginal.setPeso(nuevoPeso);
+             String lineaAntigua=(articuloOriginal.getNombre()+articuloOriginal.getPrecio()+articuloOriginal.getTipo()+articuloOriginal.getPeso());
+             String lineaNueva=(nombre+nuevoPrecio+nuevoTipo+nuevoPeso);
+                //String rutaArchivo, String lineaAntigua, String lineaNueva
+                reemplazarLineas(rutaArchivo,lineaAntigua,lineaNueva);
+
                 exito = true;
                 break;
             }
@@ -101,13 +106,69 @@ public class ArticuloDAO {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo))) {
             for (Articulo articulo : articulosOriginales) {
                 String linea = articulo.getNombre() + "," +
-                        articulo.getPeso() + "," +
-                        articulo.getPrecio() + "," +
-                        articulo.getTipo()
+                        articulo.getTipo() + "," +
+                        articulo.getPeso() +   "," +
+                        articulo.getPrecio()
                         ;
                 bw.write(linea);
                 bw.newLine();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public static List<Articulo> buscarArticulos(String nombre, String precio, String tipo, String peso) {
+        List<Articulo> articulosEncontrados = new ArrayList<>();
+        List<Articulo> articulos = leerArticulos(); // Suponiendo que tienes un método para leer los artículos
+
+        for (Articulo articulo : articulos) {
+            if (articulo.getNombre().trim().equalsIgnoreCase(nombre) &&
+                    articulo.getPrecio().trim().equalsIgnoreCase(precio) &&
+                    articulo.getTipo().trim().equalsIgnoreCase(tipo) &&
+                    articulo.getPeso().trim().equalsIgnoreCase(peso)) {
+                articulosEncontrados.add(articulo);
+            }
+        }
+
+        return articulosEncontrados;
+    }
+    public static void reemplazarLineas(String rutaArchivo, String lineaAntigua, String lineaNueva) {
+        try {
+            // Crear un archivo temporal para almacenar los cambios
+            File archivoTemporal = new File("temp.txt");
+
+            // Abrir el archivo de origen para lectura
+            BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
+
+            // Crear un escritor para el archivo temporal
+            BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTemporal));
+
+            String linea;
+
+            // Leer el archivo línea por línea
+            while ((linea = br.readLine()) != null) {
+                // Reemplazar la línea antigua por la línea nueva
+                if (linea.equals(lineaAntigua)) {
+                    linea = lineaNueva;
+                }
+
+                // Escribir la línea en el archivo temporal
+                bw.write(linea);
+                bw.newLine();
+            }
+
+            // Cerrar los flujos de lectura y escritura
+            br.close();
+            bw.close();
+
+            // Eliminar el archivo original
+            File archivoOriginal = new File(rutaArchivo);
+            archivoOriginal.delete();
+
+            // Renombrar el archivo temporal con el nombre del archivo original
+            archivoTemporal.renameTo(archivoOriginal);
+
+            System.out.println("Reemplazo de líneas completado correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
         }

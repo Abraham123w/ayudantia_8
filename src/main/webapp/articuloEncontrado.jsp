@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Exito Modificar Articulo</title>
+  <title>Articulo Encontrado</title>
   <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-<h1>Exito Modificar Articulo:</h1>
-${tablaArticulo} <!-- Se muestra la tabla generada en el Servlet -->
+<h1>Articulo Encontrado:</h1>
+${tablaArticulos} <!-- Se muestra la tabla generada en el Servlet -->
 </body>
 </html>

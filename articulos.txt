@@ -1,2 +1,6 @@
-Abraham,A,hombre,I
-Aerie,2,1000,libro
+Abraham,hombre,100,10000
+Abraham,hombre,70,10000
+Abraham,hombre,70,10000
+Abraham,hombre,70,10000
+Abraham,hombre,70,10000
+Abraham,70,10000,hombre

@@ -21,18 +21,23 @@ public class ModificarArticulosServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtener parámetros de búsqueda
         String nombre = request.getParameter("nombre").trim();
-        String precio = request.getParameter("precio").trim();
         String tipo = request.getParameter("tipo").trim();
         String peso = request.getParameter("peso").trim();
+        String precio = request.getParameter("precio").trim();
 
 
         RequestDispatcher respuesta1 = request.getRequestDispatcher("/exitoModificarArticulo.jsp");
         RequestDispatcher respuesta2= request.getRequestDispatcher("/errorModificarArticulo.jsp");
 
+       /* Articulo articulo = new Articulo(nombre,tipo,peso,precio);
+        List<Articulo> articulosEncontrados = new ArrayList<>();
+        articulosEncontrados.add(articulo);*/
+
         boolean exito =   ArticuloDAO.modificarArticulo(nombre,precio,tipo,peso);
-
+        List<Articulo> articulosEncontrados = ArticuloDAO.buscarArticulos(nombre,precio,tipo,peso);
         if (exito) {
-
+            String tablaArticulo= generarTablaLibros(articulosEncontrados);
+            request.setAttribute("tablaArticulo", tablaArticulo);
             respuesta1.forward(request, response);
         } else {
 
@@ -56,10 +61,9 @@ public class ModificarArticulosServlet extends HttpServlet {
         tabla.append("<table>");
         tabla.append("<tr>");
         tabla.append("<th>Nombre</th>");
-        tabla.append("<th>Editorial</th>");
-        tabla.append("<th>Año</th>");
+        tabla.append("<th>Precio</th>");
         tabla.append("<th>Tipo</th>");
-        tabla.append("<th>Categoría</th>");
+        tabla.append("<th>Peso</th>");
         tabla.append("</tr>");
 
         for (Articulo libro : libros) {
